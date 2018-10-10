@@ -44,15 +44,15 @@ $signPackage = $jssdk->GetSignPackage();
     // 分享到朋友圈的实例
     wx.onMenuShareTimeline({
     title: '微拍宝成长分享', // 分享标题
-    link: 'http://www.jikexueyuan.com/course/1946.html', // 分享链接
-    imgUrl: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3042410010,1849246464&fm=116&gp=0.jpg', // 分享图标
+    link: 'http://zsl.lluck.cn/index.html', // 分享链接
+    imgUrl: 'http://zsl.lluck.cn/image/1.jpg', // 分享图标
     success: function () {
         // 用户确认分享后执行的回调函数
-        alert("分享成功");
+        alert("分享wx朋友成功");
     },
     cancel: function () { 
         // 用户取消分享后执行的回调函数
-        alert("分享失败");
+        alert("分享wx朋友失败");
     }
     });
 
@@ -61,12 +61,12 @@ $signPackage = $jssdk->GetSignPackage();
     title: '分享给朋友案例', // 分享标题
     desc: '现在在开发JSSDK分享给朋友', // 分享描述
     link: 'http://www.jikexueyuan.com/course/1946.html', // 分享链接
-    imgUrl: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3042410010,1849246464&fm=116&gp=0.jpg', // 分享图标
+    imgUrl: 'http://zsl.lluck.cn/image/1.jpg', // 分享图标
     type: '', // 分享类型,music、video或link，不填默认为link
     dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
     success: function () { 
         // 用户确认分享后执行的回调函数
-        alert("分享成功");
+        alert("分享friend成功");
     },
     cancel: function () { 
         // 用户取消分享后执行的回调函数
