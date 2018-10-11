@@ -4,7 +4,9 @@
 */
 header("Content-type:text/html;charset=utf-8");
 $code=$_GET['code'];
+$state=$_GET['state'];
 echo '得到了Code:'.$code.'<br/>';
+echo '得到了state:'.$state.'<br/>';
 $appid="wx1700f0bbdf2b8f18";
 $secret="83bb877f35965f13f09a56db69ec4456";
 
