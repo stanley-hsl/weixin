@@ -8,11 +8,11 @@ $signPackage = $jssdk->GetSignPackage();
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>极客学院JSSDK案例</title>
+  <title>微拍堂微信分享案例</title>
 </head>
 <body>
   <div>
-    极客学院开发JSSDK实例讲解分享到朋友圈及分享给朋友
+  微拍堂公众号分享到朋友圈及分享给朋友
   </div>
 </body>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
@@ -43,8 +43,8 @@ $signPackage = $jssdk->GetSignPackage();
   wx.ready(function () {
     // 分享到朋友圈的实例
     wx.onMenuShareTimeline({
-    title: '微拍宝成长分享', // 分享标题
-    link: 'http://zsl.lluck.cn/index.html', // 分享链接
+    title: '微拍宝成长分享朋友圈', // 分享标题
+    link: 'http://zsl.lluck.cn/photo.html', // 分享链接
     imgUrl: 'http://zsl.lluck.cn/image/1.jpg', // 分享图标
     success: function () {
         // 用户确认分享后执行的回调函数
@@ -58,9 +58,9 @@ $signPackage = $jssdk->GetSignPackage();
 
     //分享给朋友
     wx.onMenuShareAppMessage({
-    title: '分享给朋友案例', // 分享标题
-    desc: '现在在开发JSSDK分享给朋友', // 分享描述
-    link: 'http://www.jikexueyuan.com/course/1946.html', // 分享链接
+    title: '微拍宝分享给朋友案例', // 分享标题
+    desc: '快来微拍堂做开发工程师 ....', // 分享描述
+    link: 'http://zsl.lluck.cn/photo.html', // 分享链接
     imgUrl: 'http://zsl.lluck.cn/image/1.jpg', // 分享图标
     type: '', // 分享类型,music、video或link，不填默认为link
     dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
