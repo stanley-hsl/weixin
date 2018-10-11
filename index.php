@@ -13,10 +13,12 @@ $signPackage = $jssdk->GetSignPackage();
 <body>
   <div>
   微拍堂公众号分享到朋友圈及分享给朋友
+  <p id='info'><?= json_encode($signPackage) ?></p>
   </div>
 </body>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script>
+  window.signPackage =<?= json_encode($signPackage) ?>;
   /*
    * 注意：
    * 1. 所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
@@ -44,7 +46,7 @@ $signPackage = $jssdk->GetSignPackage();
     // 分享到朋友圈的实例
     wx.onMenuShareTimeline({
     title: '微拍宝成长分享朋友圈', // 分享标题
-    link: 'http://zsl.lluck.cn/photo.html', // 分享链接
+    link: 'http://zsl.lluck.cn/boy.html', // 分享链接
     imgUrl: 'http://zsl.lluck.cn/image/1.jpg', // 分享图标
     success: function () {
         // 用户确认分享后执行的回调函数
@@ -60,7 +62,7 @@ $signPackage = $jssdk->GetSignPackage();
     wx.onMenuShareAppMessage({
     title: '微拍宝分享给朋友案例', // 分享标题
     desc: '快来微拍堂做开发工程师 ....', // 分享描述
-    link: 'http://zsl.lluck.cn/photo.html', // 分享链接
+    link: 'http://zsl.lluck.cn/boy.html', // 分享链接
     imgUrl: 'http://zsl.lluck.cn/image/1.jpg', // 分享图标
     type: '', // 分享类型,music、video或link，不填默认为link
     dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
