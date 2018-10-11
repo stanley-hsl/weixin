@@ -48,11 +48,11 @@ $signPackage = $jssdk->GetSignPackage();
     imgUrl: 'http://zsl.lluck.cn/image/1.jpg', // 分享图标
     success: function () {
         // 用户确认分享后执行的回调函数
-        alert("分享wx朋友成功");
+        alert("分享朋友圈成功");
     },
     cancel: function () { 
         // 用户取消分享后执行的回调函数
-        alert("分享wx朋友失败");
+        alert("分享朋友圈失败");
     }
     });
 
