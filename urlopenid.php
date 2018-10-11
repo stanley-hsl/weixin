@@ -4,28 +4,28 @@
 */
 header("Content-type:text/html;charset=utf-8");
 $code=$_GET['code'];
-echo 'got Code:'.$code.'<br/>';
+echo '得到了Code:'.$code.'<br/>';
 $appid="wx1700f0bbdf2b8f18";
 $secret="83bb877f35965f13f09a56db69ec4456";
 
 $url="https://api.weixin.qq.com/sns/oauth2/access_token?appid=".$appid."&secret=".$secret."&code=".$code."&grant_type=authorization_code";
-echo 'URL:'.$url.'<br/>';
+echo '取令牌的URL:'.$url.'<br/>';
 $openidarr=json_decode(gettoken($url),true);
-
+echo '<br/>返回令牌:';
 print_r($openidarr);
 $token=$openidarr['access_token'];
 $openid=$openidarr['openid'];
-echo '<br/>openId:';
+echo '<br/>用户openId:';
 echo $openid;
 echo '<br/>';
 
-echo '<br/>OAuth token:';
+echo '<br/>OAuth2.0令牌 token:';
 echo $token;
 echo '<br/>';
 
 $infourl="https://api.weixin.qq.com/sns/userinfo?access_token=".$token."&openid=".$openid."&lang=zh_CN";
 $userinfoarr=json_decode(gettoken($infourl),true);
-echo '<br/>print userinfo:';
+echo '<br/>用户详情:';
 print_r($userinfoarr);
 
 echo $userinfoarr['nickname']."<br />";
