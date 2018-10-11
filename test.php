@@ -7,7 +7,7 @@
 define("TOKEN", "weixin");
 $wechatObj = new wechatCallbackapiTest();
 $flag =$_GET['echostr'];
-echo 'echostr:'.$flag.'<br/>';
+
 
 if($flag)
 {
