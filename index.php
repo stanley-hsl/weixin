@@ -46,8 +46,8 @@ $signPackage = $jssdk->GetSignPackage();
     // 分享到朋友圈的实例
     wx.onMenuShareTimeline({
     title: '微拍宝成长分享朋友圈', // 分享标题
-    link: 'http://zsl.lluck.cn/son.html', // 分享链接
-    imgUrl: 'http://zsl.lluck.cn/image/1.jpg', // 分享图标
+    link: 'http://47.100.176.202/content/girl.html', // 分享链接
+    imgUrl: 'http://47.100.176.202/image/b1.jpg', // 分享图标
     success: function () {
         // 用户确认分享后执行的回调函数
         alert("分享朋友圈成功");
@@ -62,8 +62,8 @@ $signPackage = $jssdk->GetSignPackage();
     wx.onMenuShareAppMessage({
     title: '微拍宝分享给朋友案例', // 分享标题
     desc: '快来微拍堂做开发工程师 ....', // 分享描述
-    link: 'http://zsl.lluck.cn/son.html', // 分享链接
-    imgUrl: 'http://zsl.lluck.cn/image/1.jpg', // 分享图标
+    link: 'http://47.100.176.202/content/girl.html', // 分享链接
+    imgUrl: 'http://47.100.176.202/image/b1.jpg', // 分享图标
     type: '', // 分享类型,music、video或link，不填默认为link
     dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
     success: function () { 
