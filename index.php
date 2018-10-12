@@ -20,9 +20,10 @@ class wechatCallbackapiTest
 {
     public function log($str)
     {
-        $fp = fopen("ok.log", "a");
-        fwrite($fp, ": ".$str." \n");
-        fclose($fp);
+        // $fp = fopen("ok.log", "a");
+        // fwrite($fp, ": ".$str." \n");
+        // fclose($fp);
+        file_put_contents("ok.log", $str, FILE_APPEND);
     }
 
     public function valid()
