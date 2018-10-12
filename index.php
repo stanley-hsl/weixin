@@ -90,10 +90,10 @@ class wechatCallbackapiTest
                     <ArticleCount>1</ArticleCount>
                     <Articles>
                     <item>
-                    <Title><![CDATA[欢迎参加极客学院]]></Title> 
-                    <Description><![CDATA[极客学院微信公众平台开发视频教程]]></Description>
-                    <PicUrl><![CDATA[http://www.sinaimg.cn/dy/slidenews/4_img/2015_11/704_1575962_849639.jpg]]></PicUrl>
-                    <Url><![CDATA[http://www.jikexueyuan.com]]></Url>
+                    <Title><![CDATA[欢迎关注微拍宝成长]]></Title> 
+                    <Description><![CDATA[微拍宝欢迎您]]></Description>
+                    <PicUrl><![CDATA[http://zsl.lluck.cn/image/1.jpg]]></PicUrl>
+                    <Url><![CDATA[http://zsl.lluck.cn/son.html]]></Url>
                     </item>
                     </Articles>
                     </xml>";
@@ -120,8 +120,8 @@ class wechatCallbackapiTest
                     <item>
                     <Title><![CDATA[您发送了你好]]></Title> 
                     <Description><![CDATA[极客学院微信公众平台关键字回复]]></Description>
-                    <PicUrl><![CDATA[http://www.sinaimg.cn/dy/slidenews/4_img/2015_11/704_1575962_849639.jpg]]></PicUrl>
-                    <Url><![CDATA[http://www.jikexueyuan.com]]></Url>
+                    <PicUrl><![CDATA[http://zsl.lluck.cn/image/b1.jpg]]></PicUrl>
+                    <Url><![CDATA[http://zsl.lluck.cn/content/girl.html]]></Url>
                     </item>
                     </Articles>
                     </xml>";
