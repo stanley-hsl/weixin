@@ -81,7 +81,7 @@ class wechatCallbackapiTest
                 echo $resultStr;
             }
 
-            if ($Event == "subscribe") {
+            if ($Event == "subscribe") { // unsubscribe 是取消关注
                 $textTpl = "<xml>
                     <ToUserName><![CDATA[%s]]></ToUserName>
                     <FromUserName><![CDATA[%s]]></FromUserName>
@@ -109,35 +109,29 @@ class wechatCallbackapiTest
             }
 
             if (!empty($keyword)) {
+                $resultStr="";
                 if ($keyword == "你好") {
-                    $textTpl = "<xml>
-                    <ToUserName><![CDATA[%s]]></ToUserName>
-                    <FromUserName><![CDATA[%s]]></FromUserName>
-                    <CreateTime>%s</CreateTime>
-                    <MsgType><![CDATA[news]]></MsgType>
-                    <ArticleCount>1</ArticleCount>
-                    <Articles>
-                    <item>
-                    <Title><![CDATA[您发送了你好]]></Title> 
-                    <Description><![CDATA[极客学院微信公众平台关键字回复]]></Description>
-                    <PicUrl><![CDATA[http://zsl.lluck.cn/image/b1.jpg]]></PicUrl>
-                    <Url><![CDATA[http://zsl.lluck.cn/content/girl.html]]></Url>
-                    </item>
-                    </Articles>
-                    </xml>";
-                    $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time);
-                    echo $resultStr;
+                    $resultStr="请阅读最新资讯";
+                } else {
+                    $resultStr="您发送了".$keyword;
                 }
-                if ($keyword == "人工" || $keyword == "问题") {
-                    $textTpl = " <xml>
-                     <ToUserName><![CDATA[%s]]></ToUserName>
-                     <FromUserName><![CDATA[%s]]></FromUserName>
-                     <CreateTime>%s</CreateTime>
-                     <MsgType><![CDATA[transfer_customer_service]]></MsgType>
-                     </xml>";
-                    $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time);
-                    echo $resultStr;
-                }
+                $textTpl = "<xml>
+                <ToUserName><![CDATA[%s]]></ToUserName>
+                <FromUserName><![CDATA[%s]]></FromUserName>
+                <CreateTime>%s</CreateTime>
+                <MsgType><![CDATA[news]]></MsgType>
+                <ArticleCount>1</ArticleCount>
+                <Articles>
+                <item>
+                <Title><![CDATA[%s]]></Title> 
+                <Description><![CDATA[今天最新资讯-太阳底下无新事]]></Description>
+                <PicUrl><![CDATA[http://zsl.lluck.cn/image/b1.jpg]]></PicUrl>
+                <Url><![CDATA[http://zsl.lluck.cn/content/girl.html]]></Url>
+                </item>
+                </Articles>
+                </xml>";
+                 
+                echo sprintf($textTpl, $fromUsername, $toUsername, $time, $resultStr);
             } else {
                 echo "Input something...";
             }
