@@ -91,7 +91,7 @@ class wechatCallbackapiTest
                     <Articles>
                     <item>
                     <Title><![CDATA[欢迎关注微拍宝成长]]></Title> 
-                    <Description><![CDATA[微拍宝欢迎您]]></Description>
+                    <Description><![CDATA[微拍宝欢迎您,发送\"你好\"获取最新资迅]]></Description>
                     <PicUrl><![CDATA[http://zsl.lluck.cn/image/1.jpg]]></PicUrl>
                     <Url><![CDATA[http://zsl.lluck.cn/son.html]]></Url>
                     </item>
@@ -110,10 +110,13 @@ class wechatCallbackapiTest
 
             if (!empty($keyword)) {
                 $resultStr="";
+                $img="";
                 if ($keyword == "你好") {
                     $resultStr="请阅读最新资讯";
+                    $img="b1.jpg";
                 } else {
-                    $resultStr="您发送了".$keyword;
+                    $resultStr="您发送了 \"".$keyword."\" 无匹配关键字";
+                    $img="4.png";
                 }
                 $textTpl = "<xml>
                 <ToUserName><![CDATA[%s]]></ToUserName>
@@ -125,13 +128,13 @@ class wechatCallbackapiTest
                 <item>
                 <Title><![CDATA[%s]]></Title> 
                 <Description><![CDATA[今天最新资讯-太阳底下无新事]]></Description>
-                <PicUrl><![CDATA[http://zsl.lluck.cn/image/b1.jpg]]></PicUrl>
+                <PicUrl><![CDATA[http://zsl.lluck.cn/image/%s]]></PicUrl>
                 <Url><![CDATA[http://zsl.lluck.cn/content/girl.html]]></Url>
                 </item>
                 </Articles>
                 </xml>";
                  
-                echo sprintf($textTpl, $fromUsername, $toUsername, $time, $resultStr);
+                echo sprintf($textTpl, $fromUsername, $toUsername, $time, $resultStr,$img);
             } else {
                 echo "Input something...";
             }
