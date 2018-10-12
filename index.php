@@ -6,7 +6,7 @@
 //define your token
 define("TOKEN", "weixin");
 $wechatObj = new wechatCallbackapiTest();
-$wechatObj.log("echo:");
+$wechatObj->log("echo:");
 
 if ($_GET['echostr']) {
     $wechatObj->valid();
@@ -121,9 +121,14 @@ class wechatCallbackapiTest
             if (!empty($keyword)) {
                 $resultStr="";
                 $img="";
+                $url="content/girl.html";
                 if ($keyword == "你好") {
                     $resultStr="请阅读最新资讯";
                     $img="b1.jpg";
+                } else if($keyword == "a") {
+                    $resultStr="上期内容";
+                    $img="1.png";
+                    $url="son.php";
                 } else {
                     $resultStr="您发送了 \"".$keyword."\" 无匹配关键字";
                     $img="4.png";
@@ -139,12 +144,12 @@ class wechatCallbackapiTest
                 <Title><![CDATA[%s]]></Title> 
                 <Description><![CDATA[今天最新资讯-太阳底下无新事]]></Description>
                 <PicUrl><![CDATA[http://zsl.lluck.cn/image/%s]]></PicUrl>
-                <Url><![CDATA[http://zsl.lluck.cn/content/girl.html]]></Url>
+                <Url><![CDATA[http://zsl.lluck.cn/%s]]></Url>
                 </item>
                 </Articles>
                 </xml>";
                  
-                echo sprintf($textTpl, $fromUsername, $toUsername, $time, $resultStr, $img);
+                echo sprintf($textTpl, $fromUsername, $toUsername, $time, $resultStr, $img,$url);
             } else {
                 echo "Input something...";
             }

@@ -8,7 +8,7 @@ $signPackage = $jssdk->GetSignPackage();
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>微拍堂微信分享案例</title>
+  <title>微信分享案例</title>
 </head>
 <body>
   <div>
