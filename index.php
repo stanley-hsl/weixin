@@ -6,6 +6,8 @@
 //define your token
 define("TOKEN", "weixin");
 $wechatObj = new wechatCallbackapiTest();
+$wechatObj.log("echo:");
+
 if ($_GET['echostr']) {
     $wechatObj->valid();
 } else {
@@ -16,6 +18,13 @@ if ($_GET['echostr']) {
 
 class wechatCallbackapiTest
 {
+    public function log($str)
+    {
+        $fp = fopen("ok.log", "a");
+        fwrite($fp, ": ".$str." \n");
+        fclose($fp);
+    }
+
     public function valid()
     {
         $echoStr = $_GET["echostr"];
@@ -134,7 +143,7 @@ class wechatCallbackapiTest
                 </Articles>
                 </xml>";
                  
-                echo sprintf($textTpl, $fromUsername, $toUsername, $time, $resultStr,$img);
+                echo sprintf($textTpl, $fromUsername, $toUsername, $time, $resultStr, $img);
             } else {
                 echo "Input something...";
             }
